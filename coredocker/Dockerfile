@@ -4,10 +4,8 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY coredocker/coredocker.csproj coredocker/
-RUN dotnet restore coredocker/coredocker.csproj
-COPY . .
-WORKDIR /src/coredocker
+COPY  /. /src
+RUN dotnet restore
 RUN dotnet build coredocker.csproj -c Release -o /app
 
 FROM build AS publish

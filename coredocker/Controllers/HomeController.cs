@@ -12,7 +12,7 @@ namespace coredocker.Controllers
     {
         public IActionResult Index()
         {
-            return Content($"Date Time :{DateTime.Now}");
+            return Content($"Date Time :{DateTime.Now},version={2}");
         }
 
         public IActionResult About()
